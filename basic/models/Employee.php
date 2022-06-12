@@ -145,4 +145,34 @@ class Employee extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
         $hash = \Yii::$app->getSecurity()->generatePasswordHash($password);
         return Yii::$app->getSecurity()->validatePassword($password, $hash);
     }
+
+    public function isAdmin()
+    {
+        return $this->role_id === 1;
+    }
+
+    public function isManager()
+    {
+        return $this->role_id === 2;
+    }
+
+    public function isEmployee()
+    {
+        return $this->role_id === 3;
+    }
+
+    public function haveLevelOne()
+    {
+        return $this->access_level_id === 1;
+    }
+
+    public function haveLevelTwo()
+    {
+        return $this->access_level_id === 2;
+    }
+
+    public function haveLevelThree()
+    {
+        return $this->access_level_id === 3;
+    }
 }
