@@ -18,13 +18,13 @@ class m220612_180117_create_construction_sites_table extends Migration
             'location' => $this->text(),
             'area' => $this->float(),
             'access_level_id' => $this->integer()->notNull()
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci');
+
         $this->createIndex(
             'id-construction_site-access_level_id',
             'construction_sites',
             'access_level_id'
         );
-
 
         $this->addForeignKey(
             'fk-construction_site-access_level_id',
@@ -43,11 +43,11 @@ class m220612_180117_create_construction_sites_table extends Migration
     {
         $this->dropForeignKey(
             'fk-construction_site-access_level_id',
-            'employees'
+            'construction_sites'
         );
         $this->dropIndex(
             'id-construction_site-access_level_id',
-            'employees'
+            'construction_sites'
         );
         $this->dropTable('{{%construction_sites}}');
     }

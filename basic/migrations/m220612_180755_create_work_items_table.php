@@ -16,7 +16,7 @@ class m220612_180755_create_work_items_table extends Migration
             'id' => $this->primaryKey(),
             'title' => $this->string(),
             'description' => $this->text()->null()
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci');
     }
 
     /**

@@ -16,7 +16,7 @@ class m220612_173811_create_access_levels_table extends Migration
             'id' => $this->primaryKey(),
             'title' => $this->string(),
             'status' => $this->tinyInteger()->defaultValue(1)
-        ]);
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci');
     }
 
     /**

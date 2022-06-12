@@ -18,8 +18,9 @@ class m220612_173813_create_employees_table extends Migration
             'surname' => $this->string(),
             'birthday' => $this->date(),
             'access_level_id' => $this->integer()->notNull(),
-            'role_id' =>  $this->integer()->notNull()
-        ]);
+            'role_id' => $this->integer()->notNull()
+        ], 'CHARACTER SET utf8 COLLATE utf8_unicode_ci');
+
         $this->createIndex(
             'id-employee-access_level_id',
             'employees',
